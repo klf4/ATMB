@@ -52,7 +52,7 @@ MOCKTIME = 0
 
 def enable_mocktime():
     #For backwared compatibility of the python scripts
-    #with previous versions of the cache, set MOCKTIME 
+    #with previous versions of the cache, set MOCKTIME
     #to Jan 1, 2014 + (201 * 10 * 60)
     global MOCKTIME
     MOCKTIME = 1388534400 + (201 * 10 * 60)
@@ -250,7 +250,7 @@ def initialize_chain(test_dir, num_nodes, cachedir):
         # Create cache directories, run bitcoinds:
         for i in range(MAX_NODES):
             datadir=initialize_datadir(cachedir, i)
-            args = [ os.getenv("DOGECOIND", "dogecoind"), "-server", "-keypool=1", "-datadir="+datadir, "-discover=0" ]
+            args = [ os.getenv("ATMBCOIND", "dogecoind"), "-server", "-keypool=1", "-datadir="+datadir, "-discover=0" ]
             if i > 0:
                 args.append("-connect=127.0.0.1:"+str(p2p_port(0)))
             bitcoind_processes[i] = subprocess.Popen(args)
@@ -336,7 +336,7 @@ def start_node(i, dirname, extra_args=None, rpchost=None, timewait=None, binary=
     """
     datadir = os.path.join(dirname, "node"+str(i))
     if binary is None:
-        binary = os.getenv("DOGECOIND", "dogecoind")
+        binary = os.getenv("ATMBCOIND", "dogecoind")
     args = [ binary, "-datadir="+datadir, "-server", "-keypool=1", "-discover=0", "-rest", "-mocktime="+str(get_mocktime()) ]
     if extra_args is not None: args.extend(extra_args)
     bitcoind_processes[i] = subprocess.Popen(args)
