@@ -1,6 +1,7 @@
 # Atmcoin Core [ATMB, Ð]
 
-![Atmcoin](./doc/ATMB.png)
+<img src="https://github.com/klf4/ATMB/raw/master/doc/ATMB.png" width="200" height="200" alt="Atmcoin"/><br/>
+
 
 [![Build Status](https://travis-ci.com/dogecoin/dogecoin.svg?branch=master)](https://travis-ci.com/dogecoin/dogecoin)
 
